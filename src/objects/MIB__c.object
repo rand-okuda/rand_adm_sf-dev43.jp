@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
@@ -98,9 +98,55 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>ifInCounter__c</fullName>
+        <fullName>ifAdminStatus__c</fullName>
         <externalId>false</externalId>
-        <label>ifInCounter</label>
+        <label>ifAdminStatus</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifDescr__c</fullName>
+        <externalId>false</externalId>
+        <label>ifDescr</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifInDiscards__c</fullName>
+        <externalId>false</externalId>
+        <label>ifInDiscards</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifInErrors__c</fullName>
+        <externalId>false</externalId>
+        <label>ifInErrors</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifInNUcastPkts__c</fullName>
+        <externalId>false</externalId>
+        <label>ifInNUcastPkts</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -122,9 +168,103 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>ifOutCounter__c</fullName>
+        <fullName>ifInUcastPkts__c</fullName>
         <externalId>false</externalId>
-        <label>ifOutCounter</label>
+        <label>ifInUcastPkts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifInUnknownProtos__c</fullName>
+        <externalId>false</externalId>
+        <label>ifInUnknownProtos</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifIndex__c</fullName>
+        <externalId>false</externalId>
+        <label>ifIndex</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifLastChange__c</fullName>
+        <externalId>false</externalId>
+        <label>ifLastChange</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifMtu__c</fullName>
+        <externalId>false</externalId>
+        <label>ifMtu</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifOperStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>ifOperStatus</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifOutDiscards__c</fullName>
+        <externalId>false</externalId>
+        <label>ifOutDiscards</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifOutErrors__c</fullName>
+        <externalId>false</externalId>
+        <label>ifOutErrors</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifOutNUcastPkts__c</fullName>
+        <externalId>false</externalId>
+        <label>ifOutNUcastPkts</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -145,16 +285,70 @@
         <type>Number</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>ifOutQLen__c</fullName>
+        <externalId>false</externalId>
+        <label>ifOutQLen</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifOutUcastPkts__c</fullName>
+        <externalId>false</externalId>
+        <label>ifOutUcastPkts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifPhysAddress__c</fullName>
+        <externalId>false</externalId>
+        <label>ifPhysAddress</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifSpeed__c</fullName>
+        <externalId>false</externalId>
+        <label>ifSpeed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ifType__c</fullName>
+        <externalId>false</externalId>
+        <label>ifType</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <label>MIB</label>
     <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
         <columns>DateTime__c</columns>
         <columns>IPAddress__c</columns>
-        <columns>ifInCounter__c</columns>
-        <columns>ifInOctets__c</columns>
-        <columns>ifOutCounter__c</columns>
-        <columns>ifOutOctets__c</columns>
         <columns>Node__c</columns>
         <columns>MIBBefore__c</columns>
         <filterScope>Everything</filterScope>
@@ -169,10 +363,10 @@
     <searchLayouts>
         <customTabListAdditionalFields>DateTime__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>IPAddress__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ifInCounter__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ifInOctets__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ifOutCounter__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ifOutOctets__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields xsi:nil="true"/>
+        <customTabListAdditionalFields xsi:nil="true"/>
+        <customTabListAdditionalFields xsi:nil="true"/>
+        <customTabListAdditionalFields xsi:nil="true"/>
         <customTabListAdditionalFields>Node__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>MIBBefore__c</customTabListAdditionalFields>
     </searchLayouts>

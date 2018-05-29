@@ -57,10 +57,6 @@
         <fields>NAME</fields>
         <fields>DateTime__c</fields>
         <fields>IPAddress__c</fields>
-        <fields>ifInCounter__c</fields>
-        <fields>ifInOctets__c</fields>
-        <fields>ifOutCounter__c</fields>
-        <fields>ifOutOctets__c</fields>
         <fields>MIBBefore__c</fields>
         <relatedList>MIB__c.Node__c</relatedList>
     </relatedLists>

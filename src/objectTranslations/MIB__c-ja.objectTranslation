@@ -23,20 +23,88 @@
         <relationshipLabel><!-- MIB --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- ifInCounter --></label>
-        <name>ifInCounter__c</name>
+        <label><!-- ifAdminStatus --></label>
+        <name>ifAdminStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifDescr --></label>
+        <name>ifDescr__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifInDiscards --></label>
+        <name>ifInDiscards__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifInErrors --></label>
+        <name>ifInErrors__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifInNUcastPkts --></label>
+        <name>ifInNUcastPkts__c</name>
     </fields>
     <fields>
         <label><!-- ifInOctets --></label>
         <name>ifInOctets__c</name>
     </fields>
     <fields>
-        <label><!-- ifOutCounter --></label>
-        <name>ifOutCounter__c</name>
+        <label><!-- ifInUcastPkts --></label>
+        <name>ifInUcastPkts__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifInUnknownProtos --></label>
+        <name>ifInUnknownProtos__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifIndex --></label>
+        <name>ifIndex__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifLastChange --></label>
+        <name>ifLastChange__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifMtu --></label>
+        <name>ifMtu__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifOperStatus --></label>
+        <name>ifOperStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifOutDiscards --></label>
+        <name>ifOutDiscards__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifOutErrors --></label>
+        <name>ifOutErrors__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifOutNUcastPkts --></label>
+        <name>ifOutNUcastPkts__c</name>
     </fields>
     <fields>
         <label><!-- ifOutOctets --></label>
         <name>ifOutOctets__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifOutQLen --></label>
+        <name>ifOutQLen__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifOutUcastPkts --></label>
+        <name>ifOutUcastPkts__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifPhysAddress --></label>
+        <name>ifPhysAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifSpeed --></label>
+        <name>ifSpeed__c</name>
+    </fields>
+    <fields>
+        <label><!-- ifType --></label>
+        <name>ifType__c</name>
     </fields>
     <layouts>
         <layout>MIBレイアウト</layout>
