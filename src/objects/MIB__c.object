@@ -45,10 +45,11 @@
     <compactLayouts>
         <fullName>MIB</fullName>
         <fields>Name</fields>
-        <fields>DateTime__c</fields>
         <fields>IPAddress__c</fields>
+        <fields>ifPhysAddress__c</fields>
         <fields>MIBBefore__c</fields>
         <fields>Node__c</fields>
+        <fields>DateTime__c</fields>
         <label>MIB</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
