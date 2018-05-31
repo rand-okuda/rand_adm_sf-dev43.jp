@@ -14,7 +14,7 @@
     </preferences>
     <preferences>
         <settingName>LoginForensicsEnabled</settingName>
-        <settingValue>false</settingValue>
+        <settingValue>true</settingValue>
     </preferences>
     <preferences>
         <settingName>ReportDataCaptureEnabled</settingName>
