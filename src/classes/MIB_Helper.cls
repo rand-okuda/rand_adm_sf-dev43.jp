@@ -31,13 +31,28 @@ public class MIB_Helper {
             nodeIdIPAddressMap.put(node.IPAddress__c, node.Id);
         }
         
-        for(MIB__c mib :MIBList){
-            mib.Node__c = nodeIdIPAddressMap.get(mib.IPAddress__c);
+        Map<String,MIB__c> ifPhysAddMap = new Map<String,MIB__c>();
+        for(MIB__c mib :[SELECT ID, IPAddress__c, ifPhysAddress__c, DateTime__c FROM MIB__c WHERE IPAddress__c=:mibIpAddressSet]){
+            if(!ifPhysAddMap.containsKey(mib.ifPhysAddress__c)){
+                ifPhysAddMap.put(mib.ifPhysAddress__c,mib);
+                System.debug('*** mib ' + mib);
+            }else if(mib.DateTime__c > ifPhysAddMap.get(mib.ifPhysAddress__c).DateTime__c){
+                ifPhysAddMap.remove(mib.ifPhysAddress__c);
+                ifPhysAddMap.put(mib.ifPhysAddress__c,mib);
+                System.debug('*** mib ' + mib);
+            }
         }
-        
-        //Todo
-        //IPAddressが一致するMIBの中でDateTimeが最大のレコードをMIBBeforeに代入する。
-        //MIBのSELECTでDateTimeでORDERBYしfor()で最初に一致した際にBreakする。
+
+        for(MIB__c mib :MIBList){
+            if(mib.Node__c == null){
+                mib.Node__c = nodeIdIPAddressMap.get(mib.IPAddress__c);
+                System.debug('*** mib ' + mib);
+            }
+            if(mib.MIBBefore__c == null){
+                mib.MIBBefore__c = ifPhysAddMap.get(mib.ifPhysAddress__c).Id;
+                System.debug('*** mib ' + mib);
+            }
+        }
         
     }
         
