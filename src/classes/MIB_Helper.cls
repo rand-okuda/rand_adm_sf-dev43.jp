@@ -10,9 +10,9 @@ public class MIB_Helper {
         }
         List<Node__c> existNodeList = [SELECT Id, IPAddress__c FROM Node__c WHERE IPAddress__c=:mibIpAddressSet];
 
-        Map<Id,String> nodeIdIPAddressMap = new Map<Id,String>();
+        Map<String,Id> nodeIdIPAddressMap = new Map<String,Id>();
         for(Node__c node :[SELECT Id, IPAddress__c FROM Node__c WHERE IPAddress__c=:mibIpAddressSet]){
-            nodeIdIPAddressMap.put(node.Id, node.IPAddress__c);
+            nodeIdIPAddressMap.put(node.IPAddress__c, node.Id);
         }
         
         List<Node__c> nodeList = new List<Node__c>();
@@ -21,13 +21,14 @@ public class MIB_Helper {
                 Node__c node = new Node__c();
                 node.IPAddress__c = mib.IPAddress__c;
                 nodeList.add(node);
-                System.debug('*** node ' + node);                
+                nodeIdIPAddressMap.put(node.IPAddress__c, node.Id);
+                System.debug('*** node ' + node);
             }
         }
         insert nodeList;
         
         for(Node__c node :[SELECT Id, IPAddress__c FROM Node__c WHERE IPAddress__c=:mibIpAddressSet]){
-            nodeIdIPAddressMap.put(node.Id, node.IPAddress__c);
+            nodeIdIPAddressMap.put(node.IPAddress__c, node.Id);
         }
         
         for(MIB__c mib :MIBList){
