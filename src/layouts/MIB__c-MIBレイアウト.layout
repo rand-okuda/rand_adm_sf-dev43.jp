@@ -14,7 +14,7 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Node__c</field>
             </layoutItems>
             <layoutItems>
@@ -127,10 +127,6 @@
         <editHeading>true</editHeading>
         <label>System Information</label>
         <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>OwnerId</field>
-            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>MIBBefore__c</field>

@@ -9,7 +9,7 @@
         <name>IPAddress__c</name>
     </fields>
     <layouts>
-        <layout>IPNodeレイアウト</layout>
+        <layout>Nodeレイアウト</layout>
         <sections>
             <label><!-- カスタムリンク --></label>
             <section>カスタムリンク</section>

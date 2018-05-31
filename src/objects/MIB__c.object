@@ -41,7 +41,16 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>true</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>MIB</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>MIB</fullName>
+        <fields>Name</fields>
+        <fields>DateTime__c</fields>
+        <fields>IPAddress__c</fields>
+        <fields>MIBBefore__c</fields>
+        <fields>Node__c</fields>
+        <label>MIB</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
@@ -86,16 +95,17 @@
     </fields>
     <fields>
         <fullName>Node__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
         <label>Node</label>
         <referenceTo>Node__c</referenceTo>
         <relationshipLabel>MIB</relationshipLabel>
         <relationshipName>MIBs</relationshipName>
-        <required>false</required>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Lookup</type>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
         <fullName>ifAdminStatus__c</fullName>
@@ -311,7 +321,7 @@
     </fields>
     <fields>
         <fullName>ifPhysAddress__c</fullName>
-        <externalId>false</externalId>
+        <externalId>true</externalId>
         <label>ifPhysAddress</label>
         <length>255</length>
         <required>false</required>
@@ -370,5 +380,5 @@
         <customTabListAdditionalFields>Node__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>MIBBefore__c</customTabListAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>

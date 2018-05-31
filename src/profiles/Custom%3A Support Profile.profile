@@ -1017,11 +1017,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>MIB__c.Node__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>MIB__c.ifAdminStatus__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1533,7 +1528,7 @@
         <layout>MetricDataLink-Metric Data Link Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Node__c-IPNodeレイアウト</layout>
+        <layout>Node__c-Nodeレイアウト</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-Opportunity %28Support%29 Layout</layout>
