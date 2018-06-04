@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
@@ -45,11 +45,10 @@
     <compactLayouts>
         <fullName>MIB</fullName>
         <fields>Name</fields>
-        <fields>IPAddress__c</fields>
-        <fields>ifPhysAddress__c</fields>
         <fields>MIBBefore__c</fields>
         <fields>Node__c</fields>
-        <fields>DateTime__c</fields>
+        <fields>AllTraffic__c</fields>
+        <fields>AllError__c</fields>
         <label>MIB</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -61,6 +60,34 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AllError__c</fullName>
+        <externalId>false</externalId>
+        <formula>InError__c  +  OutError__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>エラーAll</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AllTraffic__c</fullName>
+        <externalId>false</externalId>
+        <formula>InTraffic__c  +  OutTraffic__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>通信量All</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
     <fields>
         <fullName>DateTime__c</fullName>
         <externalId>false</externalId>
@@ -79,6 +106,40 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InError__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( ifInErrors__c  &gt;  MIBBefore__r.ifInErrors__c ,
+ ifInErrors__c - MIBBefore__r.ifInErrors__c ,
+ ifInErrors__c 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>エラーIn</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InTraffic__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( ifInOctets__c  &gt;  MIBBefore__r.ifInOctets__c ,
+ ifInOctets__c - MIBBefore__r.ifInOctets__c ,
+ ifInOctets__c 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>通信量In</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -107,6 +168,40 @@
         <trackTrending>false</trackTrending>
         <type>MasterDetail</type>
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>OutError__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( ifOutErrors__c  &gt;  MIBBefore__r.ifOutErrors__c ,
+ ifOutErrors__c - MIBBefore__r.ifOutErrors__c ,
+ ifOutErrors__c 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>エラーOut</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OutTraffic__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( ifOutOctets__c  &gt;  MIBBefore__r.ifOutOctets__c ,
+ ifOutOctets__c - MIBBefore__r.ifOutOctets__c ,
+ ifOutOctets__c 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>通信量Out</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>ifAdminStatus__c</fullName>
@@ -365,6 +460,18 @@
         <filterScope>Everything</filterScope>
         <label>すべて選択</label>
     </listViews>
+    <listViews>
+        <fullName>View</fullName>
+        <columns>NAME</columns>
+        <columns>InTraffic__c</columns>
+        <columns>OutTraffic__c</columns>
+        <columns>AllTraffic__c</columns>
+        <columns>InError__c</columns>
+        <columns>OutError__c</columns>
+        <columns>AllError__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>通信情報</label>
+    </listViews>
     <nameField>
         <displayFormat>MIB-{00000000}</displayFormat>
         <label>MIB名</label>
@@ -374,12 +481,39 @@
     <searchLayouts>
         <customTabListAdditionalFields>DateTime__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>IPAddress__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields xsi:nil="true"/>
-        <customTabListAdditionalFields xsi:nil="true"/>
-        <customTabListAdditionalFields xsi:nil="true"/>
-        <customTabListAdditionalFields xsi:nil="true"/>
         <customTabListAdditionalFields>Node__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>MIBBefore__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>InTraffic__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OutTraffic__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>InError__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OutError__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Node__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>DateTime__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AllTraffic__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>InTraffic__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OutTraffic__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AllError__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>InError__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OutError__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Node__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DateTime__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AllTraffic__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>InTraffic__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OutTraffic__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AllError__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>InError__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OutError__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>DateTime__c</searchFilterFields>
+        <searchFilterFields>ifAdminStatus__c</searchFilterFields>
+        <searchFilterFields>IPAddress__c</searchFilterFields>
+        <searchResultsAdditionalFields>Node__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DateTime__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AllTraffic__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>InTraffic__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OutTraffic__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AllError__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>InError__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OutError__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>

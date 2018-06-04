@@ -8,17 +8,50 @@
         <label>Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>IPAddress__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Name</field>
             </layoutItems>
         </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>IPAddress__c</field>
+            </layoutItems>
+        </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>グラフ</label>
+        <layoutColumns>
+            <layoutItems>
+                <reportChartComponent>
+                    <cacheData>false</cacheData>
+                    <contextFilterableField>CUST_ID</contextFilterableField>
+                    <hideOnError>true</hideOnError>
+                    <includeContext>true</includeContext>
+                    <reportName>new_report_20180531a</reportName>
+                    <showTitle>true</showTitle>
+                    <size>SMALL</size>
+                </reportChartComponent>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <reportChartComponent>
+                    <cacheData>false</cacheData>
+                    <contextFilterableField>CUST_ID</contextFilterableField>
+                    <hideOnError>true</hideOnError>
+                    <includeContext>true</includeContext>
+                    <reportName>new_report_20180601a</reportName>
+                    <showTitle>true</showTitle>
+                    <size>SMALL</size>
+                </reportChartComponent>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -58,6 +91,10 @@
         <fields>DateTime__c</fields>
         <fields>IPAddress__c</fields>
         <fields>MIBBefore__c</fields>
+        <fields>InTraffic__c</fields>
+        <fields>OutTraffic__c</fields>
+        <fields>InError__c</fields>
+        <fields>OutError__c</fields>
         <relatedList>MIB__c.Node__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

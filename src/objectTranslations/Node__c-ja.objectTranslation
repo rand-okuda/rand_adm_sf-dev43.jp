@@ -14,5 +14,9 @@
             <label><!-- カスタムリンク --></label>
             <section>カスタムリンク</section>
         </sections>
+        <sections>
+            <label><!-- グラフ --></label>
+            <section>グラフ</section>
+        </sections>
     </layouts>
 </CustomObjectTranslation>

@@ -5,12 +5,28 @@
         <value>MIB</value>
     </caseValues>
     <fields>
+        <label><!-- エラーAll --></label>
+        <name>AllError__c</name>
+    </fields>
+    <fields>
+        <label><!-- 通信量All --></label>
+        <name>AllTraffic__c</name>
+    </fields>
+    <fields>
         <label><!-- DateTime --></label>
         <name>DateTime__c</name>
     </fields>
     <fields>
         <label><!-- IPAddress --></label>
         <name>IPAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- エラーIn --></label>
+        <name>InError__c</name>
+    </fields>
+    <fields>
+        <label><!-- 通信量In --></label>
+        <name>InTraffic__c</name>
     </fields>
     <fields>
         <label><!-- MIBBefore --></label>
@@ -21,6 +37,14 @@
         <label><!-- Node --></label>
         <name>Node__c</name>
         <relationshipLabel><!-- MIB --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- エラーOut --></label>
+        <name>OutError__c</name>
+    </fields>
+    <fields>
+        <label><!-- 通信量Out --></label>
+        <name>OutTraffic__c</name>
     </fields>
     <fields>
         <label><!-- ifAdminStatus --></label>
@@ -115,6 +139,14 @@
         <sections>
             <label><!-- カスタムリンク --></label>
             <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label><!-- 処理用 --></label>
+            <section>処理用</section>
+        </sections>
+        <sections>
+            <label><!-- 通信情報 --></label>
+            <section>通信情報</section>
         </sections>
     </layouts>
 </CustomObjectTranslation>

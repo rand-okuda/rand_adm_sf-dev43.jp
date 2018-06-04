@@ -56,4 +56,8 @@
         <name>CloudMON</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>CloudMON_Classic</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>

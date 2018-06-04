@@ -84,6 +84,9 @@
     </nameField>
     <searchLayouts>
         <customTabListAdditionalFields>IPAddress__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>IPAddress__c</searchFilterFields>
+        <searchResultsAdditionalFields>IPAddress__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>
