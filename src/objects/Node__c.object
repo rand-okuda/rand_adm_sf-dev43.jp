@@ -68,25 +68,41 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>Retention__c</fullName>
+        <externalId>false</externalId>
+        <label>Retention</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
     <label>Node</label>
     <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
+        <columns>Retention__c</columns>
         <columns>IPAddress__c</columns>
         <filterScope>Everything</filterScope>
         <label>すべて選択</label>
     </listViews>
     <nameField>
         <displayFormat>Node-{0000}</displayFormat>
-        <label>Node名</label>
+        <label>Node</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <searchLayouts>
         <customTabListAdditionalFields>IPAddress__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Retention__c</customTabListAdditionalFields>
         <searchFilterFields>NAME</searchFilterFields>
         <searchFilterFields>IPAddress__c</searchFilterFields>
+        <searchFilterFields>Retention__c</searchFilterFields>
         <searchResultsAdditionalFields>IPAddress__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Retention__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

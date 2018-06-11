@@ -98,6 +98,16 @@
         <type>DateTime</type>
     </fields>
     <fields>
+        <fullName>DontRetention__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY()  &gt;   DATEVALUE(DateTime__c)   +  Node__r.Retention__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DontRetention</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>IPAddress__c</fullName>
         <externalId>true</externalId>
         <label>IPAddress</label>
@@ -195,6 +205,45 @@
 )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>通信量Out</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SerialCode__c</fullName>
+        <externalId>false</externalId>
+        <formula>VALUE(
+
+LEFT(
+
+RIGHT(
+
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+TEXT(DateTime__c ),
+ &quot;-&quot;, &quot;&quot;),
+ &quot;:&quot;,&quot;&quot;),
+ &quot; &quot;,&quot;&quot;),
+ &quot;Z&quot;,&quot;&quot;)
+
+,10
+
+)
+
+,6
+
+) 
+
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SerialCode</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -457,6 +506,7 @@
         <columns>IPAddress__c</columns>
         <columns>Node__c</columns>
         <columns>MIBBefore__c</columns>
+        <columns>DontRetention__c</columns>
         <filterScope>Everything</filterScope>
         <label>すべて選択</label>
     </listViews>

@@ -11,4 +11,12 @@ trigger MIB_Trigger on MIB__c (before insert, before update) {
         MIB_Helper.linkingMIB(unLinkedMIBList);
     }
     
+    Set<String> mibIpAddressSet = new Set<String>();
+    for (MIB__c mib :Trigger.New){
+        mibIpAddressSet.add(mib.IPAddress__c);
+    }
+    if(!mibIpAddressSet.isEmpty()){
+        MIB_Helper.deletingMIB(mibIpAddressSet);
+    }
+    
 }

@@ -52,4 +52,19 @@ public class MIB_Helper {
         
     }
     
+    @Future
+    public static void deletingMIB(Set<String> mibIpAddressSet){
+        System.debug('@@@ deletingMIB()');
+        
+        List<MIB__c> deleteMIBList = new List<MIB__c>();
+        for(MIB__c mib :[SELECT ID, IPAddress__c, DontRetention__c, DateTime__c FROM MIB__c WHERE IPAddress__c=:mibIpAddressSet]){
+            if(mib.DontRetention__c){
+                deleteMIBList.add(mib);
+                System.debug('*** mib.DateTime__c ' + mib.DateTime__c);
+            }
+        }
+        delete deleteMIBList;
+        
+    }
+    
 }
