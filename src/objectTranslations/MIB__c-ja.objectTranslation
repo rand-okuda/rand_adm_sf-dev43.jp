@@ -17,6 +17,10 @@
         <name>DateTime__c</name>
     </fields>
     <fields>
+        <label><!-- DontRetention --></label>
+        <name>DontRetention__c</name>
+    </fields>
+    <fields>
         <label><!-- IPAddress --></label>
         <name>IPAddress__c</name>
     </fields>
@@ -45,6 +49,10 @@
     <fields>
         <label><!-- 通信量Out --></label>
         <name>OutTraffic__c</name>
+    </fields>
+    <fields>
+        <label><!-- SerialCode --></label>
+        <name>SerialCode__c</name>
     </fields>
     <fields>
         <label><!-- ifAdminStatus --></label>

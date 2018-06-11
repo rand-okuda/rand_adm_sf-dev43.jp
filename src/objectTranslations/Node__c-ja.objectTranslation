@@ -8,6 +8,10 @@
         <label><!-- IPAddress --></label>
         <name>IPAddress__c</name>
     </fields>
+    <fields>
+        <label><!-- Retention --></label>
+        <name>Retention__c</name>
+    </fields>
     <layouts>
         <layout>Nodeレイアウト</layout>
         <sections>
